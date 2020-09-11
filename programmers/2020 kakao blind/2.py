@@ -23,8 +23,9 @@ def solution(p):
             elif e == ")":
                 rc += 1
             if lc and rc and lc == rc:
+                print(pp[:idx + 1])
                 u = pp[:idx + 1]
-                v = pp[idx + 1:]
+                v = (pp[idx + 1:])
                 break
         if u[-1] == ')':
             return u + solution(v)
