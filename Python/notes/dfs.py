@@ -1,0 +1,16 @@
+n = 5
+g = [[1 for _ in range(n)] for _ in range(n)]
+visited = [[0 for _ in range(n)] for _ in range(n)]
+
+# 시작점 (0,0)
+q = [(0, 0)]
+visited[0][0] = 1
+
+while q:
+    y, x = q.pop()
+    for ay, ax in ((-1, 0), (1, 0), (0, -1), (0, 1)):
+        dy, dx = y + ay, x + ax
+        if 0 <= dy < n and 0 <= dx < n and not visited[dy][dx] and g[dy][dx]:
+            visited[dy][dx] = 1
+            q.append((dy, dx))
+            print(y, x)
